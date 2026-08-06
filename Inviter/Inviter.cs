@@ -79,7 +79,7 @@ namespace Inviter
                 return;
             if (Config.HiddenChatType.Contains((XivChatType)chatType))
                 return;
-            if (Svc.ClientState.LocalPlayer == null || Svc.Condition[ConditionFlag.BetweenAreas] || Svc.Condition[ConditionFlag.BetweenAreas51])
+            if (Svc.Objects.LocalPlayer == null || Svc.Condition[ConditionFlag.BetweenAreas] || Svc.Condition[ConditionFlag.BetweenAreas51])
                 return;
 
             if (!RaptureLogModule.Instance()->GetLogMessageDetail(messageIndex, out var sender, out var rawMessage, out _, out _, out _, out _))
@@ -117,13 +117,13 @@ namespace Inviter
                     return;
                 }
 
-                if (GroupManager.Instance()->GetGroup()->MemberCount > 0 && !GroupManager.Instance()->MainGroup.IsEntityIdPartyLeader(Svc.ClientState.LocalPlayer!.EntityId))
+                if (GroupManager.Instance()->GetGroup()->MemberCount > 0 && !GroupManager.Instance()->MainGroup.IsEntityIdPartyLeader(Svc.Objects.LocalPlayer!.EntityId))
                 {
                     Log("Skipping invite: not party leader.");
                     return;
                 }
 
-                if (Svc.Party.Any(p => p.ContentId == (long)contentId))
+                if (Svc.Party.Any(p => p.ContentId == contentId))
                 {
                     Log("Skipping invite: already in party.");
                     return;
@@ -209,7 +209,7 @@ namespace Inviter
                 Log($"LeaderIndex:{GroupManager.Instance()->MainGroup.PartyLeaderIndex}");
                 if (GroupManager.Instance()->MainGroup.MemberCount > 0)
                     Log($"LeaderName:{ConvertSpanToString(GroupManager.Instance()->MainGroup.GetPartyMemberByIndex((int)GroupManager.Instance()->MainGroup.PartyLeaderIndex)->Name)}");
-                Log($"SelfName:{Svc.ClientState.LocalPlayer?.Name}");
+                Log($"SelfName:{Svc.Objects.LocalPlayer?.Name}");
                 Log($"isLeader:{GroupManager.Instance()->MainGroup.PartyLeaderIndex == 0}");
             }
             else if (args == "toggle")
