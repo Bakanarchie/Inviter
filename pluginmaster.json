@@ -12,15 +12,15 @@
     "LoadSync": false,
     "CanUnloadAsync": false,
     "LoadPriority": 0,
-    "IconUrl": "https://raw.githubusercontent.com/Bluefissure/Inviter/main/images/icon.png",
+    "IconUrl": "https://raw.githubusercontent.com/Bakanarchie/Inviter/main/images/icon.png",
     "Punchline": "Invite please",
     "AcceptsFeedback": true,
     "IsHide": "False",
     "IsTestingExclusive": "False",
     "DownloadCount": 0,
     "LastUpdate": "1755483028",
-    "DownloadLinkInstall": "https://github.com/Bluefissure/DalamudPlugins/raw/Bluefissure/plugins/Inviter/latest.zip",
-    "DownloadLinkTesting": "https://github.com/Bluefissure/DalamudPlugins/raw/Bluefissure/plugins/Inviter/latest.zip",
-    "DownloadLinkUpdate": "https://github.com/Bluefissure/DalamudPlugins/raw/Bluefissure/plugins/Inviter/latest.zip"
+    "DownloadLinkInstall": "https://github.com/Bakanarchie/Inviter/latest.zip",
+    "DownloadLinkTesting": "https://github.com/Bakanarchie/Inviter/latest.zip",
+    "DownloadLinkUpdate": "https://github.com/Bakanarchie/Inviter/latest.zip"
   },
 ]
