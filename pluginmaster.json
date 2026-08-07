@@ -19,8 +19,8 @@
     "IsTestingExclusive": "False",
     "DownloadCount": 0,
     "LastUpdate": "1755483028",
-    "DownloadLinkInstall": "https://github.com/Bakanarchie/Inviter/raw/refs/heads/main/latest.zip",
-    "DownloadLinkTesting": "https://github.com/Bakanarchie/Inviter/raw/refs/heads/main/latest.zip",
-    "DownloadLinkUpdate": "https://github.com/Bakanarchie/Inviter/raw/refs/heads/main/latest.zip"
+    "DownloadLinkInstall": "https://github.com/Bakanarchie/Inviter/raw/main/latest.zip",
+    "DownloadLinkTesting": "https://github.com/Bakanarchie/Inviter/raw/main/latest.zip",
+    "DownloadLinkUpdate": "https://github.com/Bakanarchie/Inviter/raw/main/latest.zip"
   },
 ]
