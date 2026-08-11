@@ -32,6 +32,8 @@ namespace Inviter
                 DrawGeneralSettings();
             if (ImGui.CollapsingHeader(Inviter.Plugin.localizer.Localize("Filters")))
                 DrawFilters();
+            if (ImGui.CollapsingHeader(Inviter.Plugin.localizer.Localize("Invited Players")))
+                DrawInvitedPlayers();
         }
 
         private void DrawGeneralSettings()
@@ -125,6 +127,18 @@ namespace Inviter
                 ImGui.NextColumn();
             }
             ImGui.Columns(1);
+        }
+
+        private static void DrawInvitedPlayers()
+        {
+            ImGui.TextUnformatted(string.Format(Inviter.Plugin.localizer.Localize("Ignored this session: {0}"), Inviter.Plugin.InvitedPlayers.Count));
+            ImGui.SameLine();
+            if (ImGui.Button(Inviter.Plugin.localizer.Localize("Reset list")))
+                Inviter.Plugin.InvitedPlayers.Clear();
+
+            ImGui.Separator();
+            foreach (var name in Inviter.Plugin.InvitedPlayers.Values.OrderBy(n => n))
+                ImGui.TextUnformatted(name);
         }
     }
 }

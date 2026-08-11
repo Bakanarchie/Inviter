@@ -13,6 +13,7 @@ using FFXIVClientStructs.FFXIV.Client.UI.Info;
 using FFXIVClientStructs.FFXIV.Client.UI.Misc;
 using Lumina.Excel.Sheets;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -30,6 +31,7 @@ namespace Inviter
         public ConfigurationWindow ConfigurationWindow;
 
         private long NextInviteAt = 0;
+        public readonly Dictionary<ulong, string> InvitedPlayers = [];
         private readonly Hook<RaptureLogModule.Delegates.AddMsgSourceEntry> MsgHook;
 
         public unsafe Inviter(IDalamudPluginInterface PluginInterface)
@@ -129,6 +131,12 @@ namespace Inviter
                     return;
                 }
 
+                if (InvitedPlayers.ContainsKey(contentId))
+                {
+                    Log("Skipping invite: already invited this session.");
+                    return;
+                }
+
                 if (SeString.Parse(sender.AsSpan()).Payloads.FirstOrDefault(p => p is PlayerPayload) is PlayerPayload playerPayload)
                 {
                     var tc64 = Environment.TickCount64;
@@ -149,6 +157,7 @@ namespace Inviter
                             }
                         }
                         NextInviteAt = tc64 + Config.Ratelimit;
+                        InvitedPlayers[contentId] = playerPayload.PlayerName;
                         Log($"Attempting to invite {playerPayload.PlayerName}");
                         if (InInvitableInstance())
                         {

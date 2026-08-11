@@ -1,9 +1,9 @@
 [
   {
-    "Author": "Bluefissure",
+    "Author": "Bluefissure x Bakanarchie",
     "Name": "Inviter",
     "InternalName": "Inviter",
-    "AssemblyVersion": "1.1.3.1",
+    "AssemblyVersion": "1.1.4.0",
     "Description": "Automatically invite people to your party (doesn't work for CWLS). /xinvite to open. Revived by Bakanarchie.",
     "ApplicableVersion": "any",
     "RepoUrl": "https://github.com/Bakanarchie/Inviter",
