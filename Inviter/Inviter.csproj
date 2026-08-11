@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Dalamud.NET.Sdk/15.0.0">
   <PropertyGroup>
-    <Version>1.1.3.1</Version>
-    <Description>Automatically invite people to your party (doesn't work for CWLS). /xinvite to open.</Description>
+    <Version>1.1.4.1</Version>
+    <Description>Automatically invite people to your party (doesn't work for CWLS). /xinvite to open. Revived by Bakanarchie.</Description>
     <PackageProjectUrl>https://github.com/Bakanarchie/Inviter</PackageProjectUrl>
     <PackageLicenseExpression>AGPL-3.0-or-later</PackageLicenseExpression>
     <IsPackable>false</IsPackable>
